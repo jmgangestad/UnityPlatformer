@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ArmRotation.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\DeathTrigger.cs" />
+     <Compile Include="Assets\Scripts\MoveTrail.cs" />
      <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\PlatformFall.cs" />
      <Compile Include="Assets\Scripts\SimplePlatformController.cs" />

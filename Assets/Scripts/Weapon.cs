@@ -11,6 +11,11 @@ public class Weapon : MonoBehaviour {
     float timeToFire = 0;
     Transform firePoint;
 
+    float timeToSpawnEffect = 0f;
+    public float effectSpawnRate = 10;
+
+    public Transform BulletTrailPrefab;
+
 	void Awake ()
     {
         firePoint = transform.FindChild("FirePoint");
@@ -24,7 +29,6 @@ public class Weapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Shoot();
 		if(fireRate == 0)
         {
             if(Input.GetButtonDown("Fire1"))
@@ -50,6 +54,12 @@ public class Weapon : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
 
+        if(Time.time >= timeToSpawnEffect)
+        {
+            Effect();
+            timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
+        }
+
         Debug.DrawLine(firePointPosition, (mousePosition-firePointPosition)*100, Color.cyan);
 
         if(hit.collider != null)
@@ -59,5 +69,11 @@ public class Weapon : MonoBehaviour {
         }
 
     }
+
+    void Effect()
+    {
+        Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+    }
+
 
 }
