@@ -652,6 +652,12 @@ Prefab:
       propertyPath: fireRate
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114696644266794542, guid: c7d690eb71824354996f6666f85911e4,
+        type: 2}
+      propertyPath: MuzzleFlashPrefab
+      value: 
+      objectReference: {fileID: 4373660366498422, guid: 8cd03a063652e0043a4e3aa42fbe2f45,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7d690eb71824354996f6666f85911e4, type: 2}
   m_IsPrefabParent: 0
