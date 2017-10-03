@@ -19,6 +19,9 @@ namespace UnityStandardAssets._2D
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
 
+        float nextTimeToSearch = 0f;
+
+
         // Use this for initialization
         private void Start()
         {
@@ -29,10 +32,11 @@ namespace UnityStandardAssets._2D
 
 
         // Update is called once per frame
-        private void Update()
+        void Update()
         {
-            if(target == null)
+            if (target == null)
             {
+                FindPlayer();
                 return;
             }
 
@@ -44,21 +48,34 @@ namespace UnityStandardAssets._2D
 
             if (updateLookAheadTarget)
             {
-                m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
+                m_LookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
             }
             else
             {
-                m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
+                m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
             }
 
-            Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
+            Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward * m_OffsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
             newPos = new Vector3(newPos.x, Mathf.Clamp(newPos.y, yPosRestriction, Mathf.Infinity), newPos.z);
-            
+
             transform.position = newPos;
 
             m_LastTargetPosition = target.position;
+        }
+
+        void FindPlayer()
+        {
+            if (nextTimeToSearch <= Time.time)
+            {
+                GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
+                if (searchResult != null)
+                {
+                    target = searchResult.transform;
+                }
+                nextTimeToSearch = Time.time + 0.5f;
+            }
         }
     }
 }
