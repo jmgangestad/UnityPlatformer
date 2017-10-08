@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4417326985465652}
   - component: {fileID: 120020422898238280}
-  - component: {fileID: 114992690601849450}
   m_Layer: 0
   m_Name: BulletTrail
   m_TagString: Untagged
@@ -35,24 +34,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584954706108056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 4.59, z: 0}
+  m_LocalPosition: {x: -2.47, y: 4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114992690601849450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584954706108056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c70f9ccaf46e4846a2b2f7059fefc12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 230
 --- !u!120 &120020422898238280
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -60,8 +47,8 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584954706108056}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -95,18 +82,18 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 1
-        value: 0.20754623
-        inSlope: -1.1212918
-        outSlope: -1.1212918
+        time: 0.10287666
+        value: 0.06342697
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9411765, g: 0.57768756, b: 0.11764706, a: 1}
+      key1: {r: 0.89705884, g: 0.50539166, b: 0.08574825, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -136,5 +123,5 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0

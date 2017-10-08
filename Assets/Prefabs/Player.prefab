@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalPosition: {x: 0.31, y: 1.82, z: 0}
   m_LocalScale: {x: 1.7715329, y: 1.7715304, z: 1}
   m_Children:
   - {fileID: 4893024269211300}
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8ff088362e8d34299cb270a613ae72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 100
-  Damage: 10
+  fireRate: 0
+  Damage: 25
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967035
@@ -353,6 +353,7 @@ MonoBehaviour:
     type: 2}
   MuzzleFlashPrefab: {fileID: 4373660366498422, guid: 8cd03a063652e0043a4e3aa42fbe2f45,
     type: 2}
+  HitPrefab: {fileID: 4329006216359792, guid: d537a021fed31e24c9e7d2a3f1b67d54, type: 2}
 --- !u!114 &114252919589985284
 MonoBehaviour:
   m_ObjectHideFlags: 1
