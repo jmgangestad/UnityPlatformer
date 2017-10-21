@@ -208,6 +208,7 @@
      <Compile Include="Assets\Scripts\StatusIndicator.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />
+     <Compile Include="Assets\Scripts\WaveUI.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
