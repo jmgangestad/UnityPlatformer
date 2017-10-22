@@ -2314,9 +2314,9 @@ GameObject:
   - component: {fileID: 1570096615}
   - component: {fileID: 1570096616}
   - component: {fileID: 1570096617}
-  - component: {fileID: 1570096618}
   - component: {fileID: 1570096619}
   - component: {fileID: 1570096620}
+  - component: {fileID: 1570096621}
   m_Layer: 0
   m_Name: _GM
   m_TagString: GM
@@ -2371,88 +2371,9 @@ MonoBehaviour:
   spawnDelay: 0.75
   spawnPrefab: {fileID: 4201290389134370, guid: 26b57a14c5bd3b141983cbc2b7af77e2,
     type: 2}
+  spawnSoundName: Respawn
   cameraShake: {fileID: 1570096619}
   gameOverUI: {fileID: 1075510170}
---- !u!82 &1570096618
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1570096614}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9b887da7757bd8f42893208fbd01be90, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1570096619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,6 +2415,24 @@ MonoBehaviour:
   - {fileID: 1678712263}
   - {fileID: 51542969}
   timeBetweenWaves: 3
+--- !u!114 &1570096621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1570096614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28ae2063d553f649883cdf80b9ca807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Respawn
+    clip: {fileID: 8300000, guid: 9b887da7757bd8f42893208fbd01be90, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
 --- !u!4 &1678712263 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4333802706596560, guid: 11119b5f35685ac47ac1ec74b6e6c70c,
