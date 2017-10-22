@@ -7,6 +7,12 @@ public class GameMaster : MonoBehaviour {
     
     public static GameMaster gm;
 
+    private static int _remainingLives = 3;
+    public static int RemainingLives
+    {
+        get { return _remainingLives; }
+    }
+
     void Awake()
     {
         if(gm == null)
@@ -21,6 +27,9 @@ public class GameMaster : MonoBehaviour {
     public Transform spawnPrefab;
 
     public CameraShake cameraShake;
+
+    [SerializeField]
+    private GameObject gameOverUI;
 
     void Start()
     {
@@ -40,9 +49,21 @@ public class GameMaster : MonoBehaviour {
         Destroy(clone.gameObject, 3f);
     }
 
+    public void EndGame()
+    {
+        Debug.Log("Game Over");
+        gameOverUI.SetActive(true);
+    }
+
     public static void KillPlayer(Player player)
     {
         Destroy(player.gameObject);
+        _remainingLives--;
+        if(_remainingLives <= 0)
+        {
+            gm.EndGame();
+        }
+
         gm.StartCoroutine(gm.RespawnPlayer());
     }
 
