@@ -7,7 +7,10 @@ public class GameMaster : MonoBehaviour {
     
     public static GameMaster gm;
 
-    private static int _remainingLives = 3;
+    [SerializeField]
+    private int maxLives = 3;
+
+    private static int _remainingLives;
     public static int RemainingLives
     {
         get { return _remainingLives; }
@@ -37,6 +40,8 @@ public class GameMaster : MonoBehaviour {
         {
             Debug.LogError("No camera shake referenced in GameMaster");
         }
+
+        _remainingLives = maxLives;
     }
 
 
@@ -59,12 +64,14 @@ public class GameMaster : MonoBehaviour {
     {
         Destroy(player.gameObject);
         _remainingLives--;
-        if(_remainingLives <= 0)
+        if (_remainingLives <= 0)
         {
             gm.EndGame();
         }
-
-        gm.StartCoroutine(gm.RespawnPlayer());
+        else
+        {
+            gm.StartCoroutine(gm.RespawnPlayer());
+        }
     }
 
     public static void KillEnemy(Enemy enemy)
